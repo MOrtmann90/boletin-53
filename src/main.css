@@ -1,5 +1,5 @@
 :root {
-  --primary-theme-color: #c1cc99ff;
+  --primary-theme-color: #2c8c99;
   --secondary-theme-color: #ffffff;
   --primary-font-color: #ffffff;
   --secondary-font-color: #222630;
@@ -158,8 +158,7 @@ sup {color: var(--secondary-font-color);}
   font-size: 0.8rem;
 }
 
-article h3,
-article p {
+article :is(h3, p, b){
   color: var(--secondary-font-color);
   text-align: justify;
   margin: 1rem 0;
@@ -169,6 +168,110 @@ article p {
   border: 2rem solid var(--primary-theme-color);
   margin: 1rem 0;
 }
+
+/* ------------ CARDS ------------ */
+.cards-section {
+  max-width: 1024px;
+  margin: 2rem;
+  margin-inline: auto;
+}
+
+.cards-section div :is(div, b) {
+  color: var(--secondary-font-color);
+}
+
+.cards-section h3 {
+  font-size: 1rem;
+  color: var(--primary-font-color);
+  border-radius: 50px;
+  text-align: center;
+  padding: 0.2rem;
+}
+
+.grid-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.cards-section h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--primary-font-color);
+  text-shadow: 1px 1px 2px black;
+}
+
+.grid-card {
+  display: flex;
+  border: 1px solid rgba(128, 128, 128, 0.24);
+  border-radius: 10px;
+  margin-block: 0.4rem;
+}
+
+.card-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #19b9c3;
+  padding: 0.5rem;
+  text-align: center;
+  border-radius: 10px 0 0 10px;
+}
+
+.card-left img {
+  width: 50px;
+  margin-inline: auto;
+}
+
+.card-right {
+  padding: 0.4rem 0.4rem 0.4rem 0.7rem;
+  text-align: left;
+  background-color: var(--secondary-theme-color);
+  border-radius: 0 10px 10px 0;
+}
+
+/* wrapper 1 */
+.card-1 {
+  background-color: #d1f2f3;
+}
+.card-2 {
+  background-color: #a3e4e8;
+}
+.card-3 {
+  background-color: #76d7dc;
+}
+.card-4 {
+  background-color: #48c9d1;
+}
+/* wrapper 2 */
+.card-5 {
+  background-color: #d6dded;
+}
+.card-6 {
+  background-color: #acbad5;
+}
+/* wrapper 3 */
+.card-7 {
+  background-color: #fff2d0;
+}
+/* wrapper 4 */
+.card-8 {
+  background-color: #e8deec;
+}
+/* wrapper 5 */
+.card-9 {
+  background-color: #fcd5e7;
+}
+/* wrapper 6 */
+.card-10 {
+  background-color: #fce7d2;
+}
+.card-11 {
+  background-color: #fce7d2;
+}
+.card-12 {
+  background-color: #fce7d2;
+}
+
 
 /* ///////////////////////  FOOTER  /////////////////////// */
 footer p {
@@ -216,6 +319,29 @@ footer img {
 
   article h3 {
     font-size: 1.5rem;
+  }
+
+  .cards-section h3 {
+    margin-block: 0.5rem;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    gap: 0.5rem;
+    align-items: stretch;
+  }
+
+  .grid-card {
+    margin-block: 0;
+    filter: grayscale(100);
+    transition: all 0.2s ease-in-out;
+  }
+
+  .grid-card:hover {
+    transform: scale(1.05);
+    filter: grayscale(0);
   }
 }
 
